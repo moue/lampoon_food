@@ -1,2 +1,0 @@
-var SECRET_APP_ID = "5a7c8fd6";
-var SECRET_APP_KEY = "f6403a7667717d92fffe8e596366a59f";
