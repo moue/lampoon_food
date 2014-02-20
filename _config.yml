@@ -1,0 +1,9 @@
+name: "Fat and Flabulous"
+description: "Online community to help women eat more and do less"
+
+baseurl: ""
+relative_permalinks: false
+
+markdown: redcarpet
+pygments: true
+
