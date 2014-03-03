@@ -1,7 +1,7 @@
 name: "Mr. Meat Cookbook"
 description: "Online community to help people eat more and do less"
 
-baseurl: ""
+baseurl: "lampoon_food"
 relative_permalinks: false
 
 markdown: redcarpet
