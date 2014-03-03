@@ -228,7 +228,7 @@ $( '#carousel-2' ).elastislide( {minItems : 1} );
 
 
   $.ajax({
-    url: "http://api.yummly.com/v1/api/recipes?_app_id=5a7c8fd6&_app_key=f6403a7667717d92fffe8e596366a59f&q=rib+steak&requirePictures=true",
+    url: "http://api.yummly.com/v1/api/recipes?_app_id=1a7bd030&_app_key=ef9bcc4474c39cbcbe018b731f6f6ed3&q=rib+steak&requirePictures=true",
     data: {
        // the type of data you're expecting back from the api
       _accept: "application/json; charset=utf-8"
@@ -244,7 +244,7 @@ $( '#carousel-2' ).elastislide( {minItems : 1} );
         recipeid = data.matches[i].id;
 
         $.ajax({
-          url: "http://api.yummly.com/v1/api/recipe/"+recipeid+"?_app_id=5a7c8fd6&_app_key=f6403a7667717d92fffe8e596366a59f",
+          url: "http://api.yummly.com/v1/api/recipe/"+recipeid+"?_app_id=1a7bd030&_app_key=ef9bcc4474c39cbcbe018b731f6f6ed3",
           data: {
              // the type of data you're expecting back from the api
             _accept: "application/json; charset=utf-8"
