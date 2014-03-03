@@ -277,12 +277,14 @@ $( '#carousel-2' ).elastislide( {minItems : 1} );
             
             // end media divs
             pageOutput += '</div></div>';
+            
+            // send to page
+            document.getElementById('recipeCode').innerHTML = pageOutput;
           }
         })
       };
 
-      // send to page
-      document.getElementById('recipeCode').innerHTML = pageOutput;
+      
 
     }
   });
