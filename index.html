@@ -266,9 +266,9 @@ $( '#carousel-2' ).elastislide( {minItems : 1} );
             pageOutput += '<div class="media-heading"><strong><a href="'+recipe.source.sourceRecipeUrl+'">'+recipe.name+'</a></strong><small>'+recipe.source.sourceDisplayName+'</small></div>';
             
             // output each cuisine the recipe is associated with
-            recipe.attributes.cuisine.forEach(function(items){
-              pageOutput += '<a href="#"><span class="label label-success">'+items+'</span></a>';              
-            });  
+            //recipe.attributes.cuisine.forEach(function(items){
+              //pageOutput += '<a href="#"><span class="label label-success">'+items+'</span></a>';              
+            //});  
 
             pageOutput += '<dl>';
             pageOutput += '<dd>Total time to cook:'+recipe.totalTime+'</dd>';
