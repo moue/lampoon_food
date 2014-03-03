@@ -1,15 +1,134 @@
 @import "bootstrap/bootstrap.less";
 
+footer .btn-success {
+    margin-top: 15px;
+}
+
+#shows {
+  background-color: @custom-accent;
+}
+
 footer {
 	background-color: #33363B;
 	color: white;
 	.row {
-		border-bottom: 13px solid #45494e;
+		border-bottom: 10px solid #45494e;
+    padding-bottom: 1em;
 	}
 }
 
-img.img-size {
-	width: 250px;
-	height: 250px;
+.custom-horizontal {
+    margin-top: 20px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        display: inline;
+        text-decoration: none;
+        padding-right: 1em;
+    }
+    a {
+        text-decoration:none;
+        color: white;
+    }
+    a:hover {
+        color: @custom-accent;
+    }
 }
-	
+
+img.img-size {
+	width: 200px;
+	height: 200px;
+}
+
+/*
+ * Elastislide 
+ */
+
+.elastislide-carousel {
+  overflow: hidden;
+  position: relative;
+  @media (min-width: 1000px) {
+    overflow: visible;
+  }
+}
+
+/*
+ * Caption component
+ */
+
+
+.caption__wrapper {
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /* Only the -webkit- prefix is required these days */
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+.caption__wrapper::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    transition: background .25s ease-out;
+}
+
+.caption__wrapper:hover::before {
+    background: rgba(0, 0, 0, .5);
+}
+
+.caption__media {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.caption__overlay {
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    bottom: 25%;
+    left: 25%;
+    color: transparent;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity .35s ease;
+    //-webkit-transform: translateY(100%);
+      //      transform: translateY(100%);
+
+    transition: -webkit-transform .35s ease-out;
+    transition:         transform .35s ease-out;
+}
+
+.caption__wrapper:hover .caption__overlay {
+    -webkit-transition: opacity .35s ease;
+    opacity: 1;
+    color: white;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+
+.caption__overlay__title {
+    -webkit-transform: translateY( -webkit-calc(-100% - 10px) );
+            transform: translateY( calc(-100% - 10px) );
+
+    transition: -webkit-transform .35s ease-out;
+    transition:         transform .35s ease-out;
+}
+
+.caption__wrapper:hover .caption__overlay__title {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}

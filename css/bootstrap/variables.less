@@ -13,7 +13,7 @@
 @gray-light:             lighten(#000, 60%);   // #999
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #428bca;
+@brand-primary:         #000; //#428bca;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -34,19 +34,25 @@
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
+//** Global accent color **//
+@custom-accent:			#5cb85c; // green
+@custom-attention:		#eb2316; // red
+@custom-base:			#fee895; // light-yellow
+@custom-highlight:		#fee174; // dark-yellow
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  "Roboto", Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       "Roboto Slab", Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          14px;
 @font-size-huge:		  ceil((@font-size-base * 3)); // nav bar brand
+@font-size-xlarge:		  20px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
@@ -353,9 +359,9 @@
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
-@navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
-@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-hover-bg:           darken(@custom-accent, 5%);
+@navbar-default-toggle-icon-bar-bg:        @custom-highlight;
+@navbar-default-toggle-border-color:       @custom-highlight;
 
 
 // Inverted navbar
@@ -702,7 +708,7 @@
 //** Padding around the thumbnail image
 @thumbnail-padding:           4px;
 //** Thumbnail background color
-@thumbnail-bg:                @body-bg;
+@thumbnail-bg:                @custom-accent;
 //** Thumbnail border color
 @thumbnail-border:            #ddd;
 //** Thumbnail border radius

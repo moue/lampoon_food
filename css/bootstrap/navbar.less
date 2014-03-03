@@ -9,6 +9,13 @@
 // other navbar variations.
 
 .navbar {
+  // Create a textured pattern
+  background:
+    radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #fee174 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+    radial-gradient(at 100% 100%,     rgba(96, 16, 48, 0) 9px, #fee174 10px, rgba(96, 16, 48, 0) 11px),
+    #fee174;
+  background-size: 20px 20px;
+  
   position: relative;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   //margin-bottom: @navbar-margin-bottom;
@@ -163,12 +170,12 @@
     text-decoration: none;
   }
 
-  @media (min-width: @grid-float-breakpoint) {
-    .navbar > .container &,
-    .navbar > .container-fluid & {
-      margin-left: -@navbar-padding-horizontal;
-    }
-  }
+  // @media (min-width: @grid-float-breakpoint) {
+  //   .navbar > .container &,
+  //   .navbar > .container-fluid & {
+  //     margin-left: -@navbar-padding-horizontal;
+  //   }
+  // }
 }
 
 
@@ -181,9 +188,9 @@
   position: relative;
   float: right;
   margin-right: @navbar-padding-horizontal;
-  padding: 9px 10px;
+  padding: 15px 15px;
   .navbar-vertical-align(34px);
-  background-color: transparent;
+  background-color: @custom-accent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   border-radius: @border-radius-base;
@@ -223,6 +230,9 @@
     padding-top:    10px;
     padding-bottom: 10px;
     line-height: @line-height-computed;
+    font-family: @font-family-serif;
+    font-size: @font-size-xlarge;
+    font-weight: 700;
   }
 
   @media (max-width: @grid-float-breakpoint-max) {

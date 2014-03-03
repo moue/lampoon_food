@@ -14,19 +14,19 @@ title: Mr. Meat Cookbook
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand-sm" style="font-family:burgy; display: none;" href="#">MR. MEAT COOKBOOK</a>
+        <a class="navbar-brand hidden-sm hidden-md hidden-lg" style="font-family:burgy;" href="#">MR. MEAT COOKBOOK</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>  
-          <a class="navbar-brand" style="font-family:burgy;" href="#">MR. MEAT COOKBOOK</a>
-          <li><a href="#">Link</a></li>  
-          <li><a href="#">Link</a></li> 
-          <li><a href="#">Link</a></li>                 
+          <li><a href="#">Recipes</a></li>
+          <li><a href="#">Shows</a></li>
+          <li><a href="#">Videos</a></li>  
+          <a class="navbar-brand hidden-xs hidden-sm" style="font-family:burgy;" href="#">MR. MEAT COOKBOOK</a>
+          <li><a href="#">Forum</a></li>  
+          <li><a href="#">Challenges</a></li> 
+          <li><a href="#">Contact</a></li>                 
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -40,11 +40,11 @@ function vidinfolist(data) {
   var pageOutput = '<ul id="carousel-1" class="elastislide-list">';
   for (var i=0; i<data.feed.entry.length; i++) {
     var datID=dat[i].id.$t.substring(38);
-    var datTitle=dat[i].title.$t;
+    //var datTitle=dat[i].title.$t;
     var datDescription=dat[i].media$group.media$description.$t;
     var datThumbnail=dat[i].media$group.media$thumbnail[0].url;
-    pageOutput += '<li><div>' + datTitle + '</div>';
-    pageOutput+='<iframe width="320" height="180" src="http://www.youtube.com/embed/'+datID+'?showinfo=0&iv_load_policy=3&controls=0" frameborder="0" allowfullscreen></iframe></li>';
+    //pageOutput += '<li><div>' + datTitle + '</div>';
+    pageOutput+='<li><iframe width="320" height="180" src="http://www.youtube.com/embed/'+datID+'?showinfo=0&iv_load_policy=3&controls=0" frameborder="0" allowfullscreen></iframe></li>';
   }
   document.getElementById('videoCode').innerHTML = pageOutput;
   pageOutput +='</ul>';
@@ -54,17 +54,9 @@ function vidinfolist(data) {
 <div id="videoCode" class="demo-3"></div>
 <script type="text/javascript" src="http://gdata.youtube.com/feeds/users/EpicMealTime/uploads?alt=json-in-script&callback=vidinfolist&max-results=8"></script>
 
- <main class="container-fluid" style="margin-top: 3em;"> 
+ <main class="container" style="margin-top: 3em; margin-bottom: 3em;"> 
   <div class="row">
-    <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading"><h1>Spotlight on Rib Beef</h1></div>
-        <div class="panel-body">
-          <figure><img src="{{ site.baseurl }}/imgs/feat.png" width=100%></figure>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3>Featured Recipes</h3>
@@ -73,42 +65,102 @@ function vidinfolist(data) {
         <div id="recipeCode" class="panel-body"></div>
       </div>
     </div>
-    <div class="col-md-3">
-      <figure><img src="{{ site.baseurl }}/imgs/img1.png" width=100%></figure>
-      <figure><img src="{{ site.baseurl }}/imgs/img2.png" width=100%></figure>
-      <figure><img src="{{ site.baseurl }}/imgs/img3.png" width=100%></figure>
-      <figure><img src="{{ site.baseurl }}/imgs/img4.png" width=100%></figure>
+    <div class="col-md-5"><!-- second half of page, contains ads and slideshow articles-->
+      <div class="row" data-right-height>
+        <div class="col-xs-6">
+          <div class="thumbnail" data-right-height-content>
+            <img src="{{ site.baseurl }}/imgs/img1.jpg" alt="...">
+            <div class="caption">
+              <h4><a href="#">50 High Calorie Foods to Get Fat Fast</a></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="thumbnail" data-right-height-content>
+            <img src="{{ site.baseurl }}/imgs/img2.jpg" alt="...">
+            <div class="caption">
+              <h4><a href="#">7 Fast Food Burgers with the Most Calories</a></h4>
+            </div>
+            
+          </div>
+        </div>  
+      </div>  
+      <div class="row" data-right-height>
+        <div class="col-xs-6">
+          <div class="thumbnail" data-right-height-content>
+            <img src="{{ site.baseurl }}/imgs/img3.jpg" alt="...">
+            <div class="caption">
+              <h4><a href="#">10 Ways to Cook Bacon</a></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="thumbnail" data-right-height-content>
+            <img src="{{ site.baseurl }}/imgs/img4.jpg" alt="...">
+            <div class="caption">
+              <h4><a href="#">20 Ingenious Ways to Put Meat in Candy</a></h4>
+            </div>
+          </div>
+        </div>
+
+      </div> 
+      <div class="row">
+      <div class="col-sm-12"><!--begin ad-->
+        <figure><img src="http://www.adweek.com/files/imagecache/node-blog/blogs/whopper-lust.jpg" width=100% /></figure>
+      </div><!--end ad-->
+      </div>
+
     </div>
   </div>
+</main>
+<section id="shows">
+  <div class="container">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-xs-4 col-sm-5">
       <h2>Chefs & Hosts</h2>
       <p>Tonight's Schedule</p>
       <ul>
-        <li>Who Took My Meat? 8|7c</li>
-        <li>Meatless in Seattle 9|8c</li>
-        <li>No Meat Like Today 10|9c</li>  
-        <li>Undercover Butcher 11|10c</li>
+        <li>Who Took My Meat? 8p|7c</li>
+        <li>Meatless in Seattle 9p|8c</li>
+        <li>No Meat Like Today 10p|9c</li>  
+        <li>Undercover Butcher 11p|10c</li>
       </ul>
     </div>
-    <div class="col-md-9 demo-1">
+    <div class="col-md-9 col-xs-8 col-sm-7">
       <ul id="carousel-2" class="elastislide-list">
-        <li><img src="{{ site.baseurl }}/imgs/chef1.jpg" class="img-circle img-size"></li>
-        <li><img src="{{ site.baseurl }}/imgs/chef2.jpg" class="img-circle img-size"></li>
-        <li><img src="{{ site.baseurl }}/imgs/chef3.jpg" class="img-circle img-size"></li>
+        <li class="caption__wrapper">
+          <img src="{{ site.baseurl }}/imgs/chef3.jpg" class="img-circle img-size caption__media">
+          <span class="caption__overlay">
+            <h3 class="caption__overlay__content">Fridays<br>10p|9c</h3>
+          </span>
+        </li>
+        <li class="caption__wrapper">
+          <img src="{{ site.baseurl }}/imgs/chef1.jpg" class="img-circle img-size caption__media">
+          <span class="caption__overlay">
+            <h3 class="caption__overlay__content">Saturdays<br>10p|9c</h3>
+          </span>
+        </li>
+        <li class="caption__wrapper">
+          <img src="{{ site.baseurl }}/imgs/chef2.jpg" class="img-circle img-size caption__media">
+          <span class="caption__overlay">
+            <h3 class="caption__overlay__content">Sundays<br>10p|9c</h3>
+          </span>
+        </li>
+
       </ul>
     </div>
   </div>
+  </div>
+</section>
 
-</main>
-
-<footer class="container-fluid">
+<footer>
+  <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-sm-9 col-xs-8">
       <h1>Continue Cooking</h1>
       <p class="lead">Mr. Meat Cookbook is the best online network to make meat that can change your life. <small>Our newsletter will keep you updated on new recipes, articles, and videos. Subscribe today!</small></p>
     </div>
-    <div class="col-md-3">
+    <div class="col-sm-3 col-xs-4">
       <h3>Stay Hungry</h3>
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Email">
@@ -116,39 +168,46 @@ function vidinfolist(data) {
       <button type="button" class="btn btn-danger btn-outline">Subscribe</button>
     </div>
   </div>
-  <div class="row" style="margin-bottom: 1.5em;">
-    <div class="col-md-4">
-      <h2>Send in a Recipe</h2>
-      <p>Have your recipe published and give back to the community! Although we focus on meals with meat in them, we also feature recipes of non-meat filled but still delicious, fatty foods.</p>
-       <button type="button" class="btn btn-primary btn-lg btn-outline">Learn More</button>
+  <div class="row" data-right-height>
+    <div class="col-sm-4">
+      <section data-right-height-content>
+        <h2>Send in a Recipe</h2>
+        <p>Have your recipe published and give back to the community! Although we focus on meals with meat in them, we also feature recipes of non-meat filled but still delicious, fatty foods.</p>
+      </section>
+      <button type="button" class="btn btn-success btn-lg btn-outline">Learn More</button>
     </div>
-    <div class="col-md-4">
-      <h2>Make a Video</h2>
-      <p>Do you have your own way of spicing up a meal? We love seeing how other people make their meats. This site has a non-judging, active community, so feel free to send us a video of you cooking, whether the recipe is an original or from this site. Please review your video before you send it!</p>
-      <button type="button" class="btn btn-primary btn-lg btn-outline">Learn More</button>
+    <div class="col-sm-4">  
+      <section data-right-height-content>
+        <h2>Make a Video</h2>
+        <p>Do you have your own way of spicing up a meal? We love seeing how other people make their meats. This site has a non-judging, active community, so feel free to send us a video of you cooking, whether the recipe is an original or from this site. Please review your video before you send it!</p>
+      </section>
+      <button type="button" class="btn btn-success btn-lg btn-outline">Learn More</button>
     </div>
-    <div class="col-md-4">
-      <h2>Join the Team</h2>
-      <p>We invite all qualified candiates to submit a resume. Whether you're fit or you're flabulous, we want your talent! Can you filet a mignon like none other? Can you dice a sausage in less in a minute? We require cover letters.</p>
-      <button type="button" class="btn btn-primary btn-lg btn-outline">Learn More</button>
+    <div class="col-sm-4">
+      <section data-right-height-content>
+        <h2>Join the Team</h2>
+        <p>We invite all qualified candiates to submit a resume. Whether you're fit or you're flabulous, we want your talent! Can you filet a mignon like none other? Can you dice a sausage in less in a minute? We require cover letters.</p>
+      </section>
+      <button type="button" class="btn btn-success btn-lg btn-outline">Learn More</button>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <h3>Mr. Meat Cookbook</h3>
       <p>Our mission is to publish the best recipes that contain meat and other fatty foods.</p>
-      
+      <h6>(c) 2014 Meathouse Meatups</h6>
     </div>
-    <div class="col-md-6">
-      <ul class="nav nav-pills">
+    <div class="col-sm-6">
+      <ul class="custom-horizontal">
     		<li><a href="#">Site Map</a></li>
     		<li><a href="#">Terms of Use</a></li>
       	<li><a href="#">Careers</a></li>
     		<li><a href="#">Help</a></li>
     		<li><a href="#">Contact Us</a></li>
     	</ul>
-      <small>(c) 2014 Meathouse Meatups</small>
+      
     </div>
+  </div>
   </div>
 </footer>
 
@@ -159,12 +218,13 @@ function vidinfolist(data) {
 <script type="text/javascript" src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/modernizr.custom.17475.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.elastislide.js"></script>
+<script src="js/right-height.js"></script>
 
 <script type="text/javascript">  
-   
-$( '#carousel-1' ).elastislide( {minItems : 3} );
-$( '#carousel-2' ).elastislide( {minItems : 2} );
+rightHeight.init();
 
+$( '#carousel-1' ).elastislide( {minItems : 3} );
+$( '#carousel-2' ).elastislide( {minItems : 1} );
 
 
   $.ajax({
@@ -176,31 +236,55 @@ $( '#carousel-2' ).elastislide( {minItems : 2} );
     dataType: "jsonp",
     success: function(data) {
       var pageOutput = "";
-      for (var i = 0; i < data.matches.length; i++) {
-        pageOutput += '<div class="media">'
-        
-        // save thumbnail of recipe
-        imageUrl = data.matches[i].smallImageUrls[0];
-        pageOutput += '<figure class="pull-left"><img class="media-object" src='+imageUrl+'></figure>';
+      
+      
+      for (var i = 0; i < 4; i++) {
 
-        // name and description of recipe
-        pageOutput += '<div class="media-body">'
-        pageOutput += '<div class="media-heading"><strong><a href="#">'+data.matches[i].recipeName+'</a></strong><small> '+data.matches[i].sourceDisplayName+'</small></div>';
-        
-        // output each ingredient the recipe uses
-        data.matches[i].ingredients.forEach(function(items){
-          pageOutput += '<a href="#"><span class="label label-success">'+items+'</span></a>';              
-        });  
-        
-        // end media divs
-        pageOutput += '</div></div>';
+        // save recipe id
+        recipeid = data.matches[i].id;
+
+        $.ajax({
+          url: "http://api.yummly.com/v1/api/recipe/"+recipeid+"?_app_id=5a7c8fd6&_app_key=f6403a7667717d92fffe8e596366a59f",
+          data: {
+             // the type of data you're expecting back from the api
+            _accept: "application/json; charset=utf-8"
+          },
+          dataType: "jsonp",
+          success: function(recipe) {
+            //recipeurl = recipe.sourceRecipeUrl;
+            console.log(recipe);
+
+            pageOutput += '<div class="media">';
+          
+            // save thumbnail of recipe
+            imageUrl = recipe.images.hostedMediumUrl;
+            pageOutput += '<figure class="pull-left"><img class="media-object" src='+imageUrl+'></figure>';
+
+            // name and description of recipe
+            pageOutput += '<div class="media-body">';
+
+            pageOutput += '<div class="media-heading"><strong><a href="'+recipe.source.sourceRecipeUrl+'">'+recipe.name+'</a></strong><small>'+recipe.source.sourceDisplayName+'</small></div>';
+            
+            // output each cuisine the recipe is associated with
+            recipe.attributes.cuisine.forEach(function(items){
+              pageOutput += '<a href="#"><span class="label label-success">'+items+'</span></a>';              
+            });  
+
+            pageOutput += '<dl>';
+            pageOutput += '<dd>Total time to cook:'+recipe.totalTime+'</dd>';
+            pageOutput += '<dd>Number of servings:'+recipe.yield+'</dd>';
+            pageOutput += '</dl>'
+            
+            // end media divs
+            pageOutput += '</div></div>';
+          }
+        })
       };
-      console.log(data);
+
       // send to page
       document.getElementById('recipeCode').innerHTML = pageOutput;
 
     }
   });
-
 </script> 
 

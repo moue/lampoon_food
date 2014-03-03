@@ -148,31 +148,45 @@
 }
 
 // Transformations
-.rotate(@degrees) {
-  -webkit-transform: rotate(@degrees);
-      -ms-transform: rotate(@degrees); // IE9 only
-          transform: rotate(@degrees);
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+      -ms-transform: scale(@ratio); // IE9 only
+          transform: scale(@ratio);
 }
-.scale(@ratio; @ratio-y...) {
-  -webkit-transform: scale(@ratio, @ratio-y);
-      -ms-transform: scale(@ratio, @ratio-y); // IE9 only
-          transform: scale(@ratio, @ratio-y);
+.scale(@ratioX; @ratioY) {
+  -webkit-transform: scale(@ratioX, @ratioY);
+      -ms-transform: scale(@ratioX, @ratioY); // IE9 only
+          transform: scale(@ratioX, @ratioY);
 }
-.translate(@x; @y) {
-  -webkit-transform: translate(@x, @y);
-      -ms-transform: translate(@x, @y); // IE9 only
-          transform: translate(@x, @y);
+.scaleX(@ratio) {
+  -webkit-transform: scaleX(@ratio);
+      -ms-transform: scaleX(@ratio); // IE9 only
+          transform: scaleX(@ratio);
+}
+.scaleY(@ratio) {
+  -webkit-transform: scaleY(@ratio);
+      -ms-transform: scaleY(@ratio); // IE9 only
+          transform: scaleY(@ratio);
 }
 .skew(@x; @y) {
   -webkit-transform: skew(@x, @y);
       -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
           transform: skew(@x, @y);
 }
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y); // IE9 only
+          transform: translate(@x, @y);
+}
 .translate3d(@x; @y; @z) {
   -webkit-transform: translate3d(@x, @y, @z);
           transform: translate3d(@x, @y, @z);
 }
-
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees); // IE9 only
+          transform: rotate(@degrees);
+}
 .rotateX(@degrees) {
   -webkit-transform: rotateX(@degrees);
       -ms-transform: rotateX(@degrees); // IE9 only
@@ -228,6 +242,10 @@
 .animation-direction(@direction) {
   -webkit-animation-direction: @direction;
           animation-direction: @direction;
+}
+.animation-fill-mode(@fill-mode) {
+  -webkit-animation-fill-mode: @fill-mode;
+          animation-fill-mode: @fill-mode;
 }
 
 // Backface visibility
@@ -358,7 +376,8 @@
 
 // Retina images
 //
-// Short retina mixin for setting background-image and -size
+// Short retina mixin for setting background-image and -size. Note that the
+// spelling of `min--moz-device-pixel-ratio` is intentional.
 
 .img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
   background-image: url("@{file-1x}");
@@ -410,12 +429,12 @@
     background-color: @heading-bg-color;
     border-color: @heading-border;
 
-    + .panel-collapse .panel-body {
+    + .panel-collapse > .panel-body {
       border-top-color: @border;
     }
   }
   & > .panel-footer {
-    + .panel-collapse .panel-body {
+    + .panel-collapse > .panel-body {
       border-bottom-color: @border;
     }
   }
@@ -574,7 +593,7 @@
   &[href] {
     &:hover,
     &:focus {
-      background-color: darken(@color, 30%);
+      background-color: darken(@color, 10%);
     }
   }
 }
@@ -638,8 +657,8 @@
 .container-fixed() {
   margin-right: auto;
   margin-left: auto;
-  padding-left:  6em;
-  padding-right: 6em;
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
   &:extend(.clearfix all);
 }
 

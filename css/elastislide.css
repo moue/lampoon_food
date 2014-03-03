@@ -18,7 +18,12 @@
 	background-color: #fff;
 	margin: 0 auto;
 	min-height: 60px;
-	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	/*box-shadow: 1px 1px 3px rgba(0,0,0,0.2);*/
+}
+
+#shows .elastislide-wrapper {
+	background-color: #5cb85c;
+	
 }
 
 .elastislide-wrapper.elastislide-loading {
@@ -30,12 +35,12 @@
 .elastislide-horizontal {
 	background-color: #fff;
 	padding: 30px 60px;
-	opacity: 0.8;
+	/*opacity: 0.8;
 	-webkit-transition: opacity 0.3s ease-in-out;
 	-moz-transition: opacity 0.3s ease-in-out;
 	-ms-transition: opacity 0.3s ease-in-out;
 	-o-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;*/
 }
 
 .elastislide-horizontal:hover {
@@ -46,10 +51,10 @@
 	padding: 40px 10px;
 }
 
-.elastislide-carousel {
+/*.elastislide-carousel {
 	overflow: hidden;
 	position: relative;
-}
+}*/
 
 .elastislide-carousel ul {
 	position: relative;
@@ -70,7 +75,7 @@
 }
 
 .elastislide-carousel ul li {
-	margin: 0;
+	margin-right: 20px;
 	-webkit-backface-visibility: hidden;
 }
 
@@ -221,19 +226,6 @@
 	padding: 30px 60px;
 }
 
-.no-touch .demo-3 .elastislide-horizontal {
-	opacity: 0.8;
-	-webkit-transition: opacity 0.3s ease-in-out;
-	-moz-transition: opacity 0.3s ease-in-out;
-	-ms-transition: opacity 0.3s ease-in-out;
-	-o-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;
-}
-
-.no-touch .demo-3 .elastislide-horizontal:hover {
-	opacity: 1;
-}
-
 .demo-3 .elastislide-wrapper nav span {
 	background-color: #000;
 }
@@ -254,7 +246,7 @@
 
 .demo-3 .elastislide-horizontal.elastislide-loading,
 .demo-4 .elastislide-horizontal.elastislide-loading {
-	background-image: url(../images/loading_dark.gif);
+	background-image: url(../imgs/loading_dark.gif);
 }
 
 .demo-4 .elastislide-carousel ul li a{
