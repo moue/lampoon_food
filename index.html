@@ -131,19 +131,19 @@ function vidinfolist(data) {
         <li class="caption__wrapper">
           <img src="{{ site.baseurl }}/imgs/chef3.jpg" class="img-circle img-size caption__media">
           <span class="caption__overlay">
-            <h3 class="caption__overlay__content">Fridays<br>10p|9c</h3>
+            <h3 class="caption__overlay__content">Cinnabon<br>Bun Fun<br>Fridays<br>10p|9c</h3>
           </span>
         </li>
         <li class="caption__wrapper">
           <img src="{{ site.baseurl }}/imgs/chef1.jpg" class="img-circle img-size caption__media">
           <span class="caption__overlay">
-            <h3 class="caption__overlay__content">Saturdays<br>10p|9c</h3>
+            <h3 class="caption__overlay__content">Extreme<br>Food<br>Takeover<br>Saturdays<br>10p|9c</h3>
           </span>
         </li>
         <li class="caption__wrapper">
           <img src="{{ site.baseurl }}/imgs/chef2.jpg" class="img-circle img-size caption__media">
           <span class="caption__overlay">
-            <h3 class="caption__overlay__content">Sundays<br>10p|9c</h3>
+            <h3 class="caption__overlay__content">Man vs. <br>Meat<br>Sundays<br>10p|9c</h3>
           </span>
         </li>
 
@@ -192,12 +192,12 @@ function vidinfolist(data) {
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <h3>Mr. Meat Cookbook</h3>
       <p>Our mission is to publish the best recipes that contain meat and other fatty foods.</p>
       <h6>(c) 2014 Meathouse Meatups</h6>
     </div>
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <ul class="custom-horizontal">
     		<li><a href="#">Site Map</a></li>
     		<li><a href="#">Terms of Use</a></li>
@@ -238,7 +238,7 @@ $( '#carousel-2' ).elastislide( {minItems : 1} );
       var pageOutput = "";
       
       
-      for (var i = 0; i < 1; i++) {
+      for (var i = 0; i < 4; i++) {
 
         // save recipe id
         recipeid = data.matches[i].id;
@@ -258,22 +258,26 @@ $( '#carousel-2' ).elastislide( {minItems : 1} );
           
             // save thumbnail of recipe
             imageUrl = recipe.images[0].hostedLargeUrl;
-            pageOutput += '<figure class="pull-left"><img class="media-object" src='+imageUrl+'></figure>';
+            pageOutput += '<figure class="pull-left media-th"><img class="media-object" width=100% src='+imageUrl+'></figure>';
 
             // name and description of recipe
             pageOutput += '<div class="media-body">';
 
-            pageOutput += '<div class="media-heading"><strong><a href="'+recipe.source.sourceRecipeUrl+'">'+recipe.name+'</a></strong><small>'+recipe.source.sourceDisplayName+'</small></div>';
+            pageOutput += '<div class="media-heading"><h3><a href="'+recipe.source.sourceRecipeUrl+'">'+recipe.name+'</a></h3><h4><a href="'+recipe.source.sourceSiteUrl+'">'+recipe.source.sourceDisplayName+'</h4></div>';
             
-            // output each cuisine the recipe is associated with
-            recipe.attributes.cuisine.forEach(function(items){
-              pageOutput += '<a href="#"><span class="label label-success">'+items+'</span></a>';              
-            });  
+
 
             pageOutput += '<dl>';
-            pageOutput += '<dd>Total time to cook:'+recipe.totalTime+'</dd>';
-            pageOutput += '<dd>Number of servings:'+recipe.yield+'</dd>';
-            pageOutput += '</dl>'
+            pageOutput += '<dd><strong>Total time to cook: </strong>'+recipe.totalTime+'</dd>';
+            pageOutput += '<dd><strong>Number of servings: </strong>'+recipe.yield+'</dd>';
+            pageOutput += '</dl>';
+            
+            // output each cuisine the recipe is associated with, IF EXISTS
+            if($.isArray(recipe.attributes.cuisine)){
+              recipe.attributes.cuisine.forEach(function(items){
+                pageOutput += '<a href="#"><span class="label label-success">'+items+'</span></a>';
+              });   
+            }
             
             // end media divs
             pageOutput += '</div></div>';

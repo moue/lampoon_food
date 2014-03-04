@@ -18,12 +18,11 @@ footer {
 }
 
 .custom-horizontal {
-    margin-top: 20px;
-
     ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
+        
     }
     li {
         display: inline;
@@ -36,6 +35,14 @@ footer {
     }
     a:hover {
         color: @custom-accent;
+        text-decoration: underline;
+    }
+    
+    margin-top: 20px;
+    text-align:right;
+    @media (max-width: @screen-sm-min){
+        text-align: left;
+        margin-left: -40px;
     }
 }
 
@@ -97,7 +104,7 @@ img.img-size {
 
 .caption__overlay {
     position: absolute;
-    top: 25%;
+    top: 15%;
     right: 25%;
     bottom: 25%;
     left: 25%;
@@ -131,4 +138,25 @@ img.img-size {
 .caption__wrapper:hover .caption__overlay__title {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+}
+
+dl {
+    margin-bottom: 5px;
+}
+
+.media-th {
+    width: 40%;
+}
+
+.media .label {
+    padding: 5px;
+    font-size: 13px;
+}
+
+.media-heading {
+    margin-top: 0px;
+}
+
+a:hover {
+    text-decoration: underline;
 }

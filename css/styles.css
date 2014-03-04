@@ -5822,6 +5822,7 @@ footer .row {
 }
 .custom-horizontal {
   margin-top: 20px;
+  text-align: right;
 }
 .custom-horizontal ul {
   margin: 0;
@@ -5839,6 +5840,13 @@ footer .row {
 }
 .custom-horizontal a:hover {
   color: #5cb85c;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .custom-horizontal {
+    text-align: left;
+    margin-left: -40px;
+  }
 }
 img.img-size {
   width: 200px;
@@ -5891,7 +5899,7 @@ img.img-size {
 }
 .caption__overlay {
   position: absolute;
-  top: 25%;
+  top: 15%;
   right: 25%;
   bottom: 25%;
   left: 25%;
@@ -5918,4 +5926,20 @@ img.img-size {
 .caption__wrapper:hover .caption__overlay__title {
   -webkit-transform: translateY(0);
   transform: translateY(0);
+}
+dl {
+  margin-bottom: 5px;
+}
+.media-th {
+  width: 40%;
+}
+.media .label {
+  padding: 5px;
+  font-size: 13px;
+}
+.media-heading {
+  margin-top: 0px;
+}
+a:hover {
+  text-decoration: underline;
 }
